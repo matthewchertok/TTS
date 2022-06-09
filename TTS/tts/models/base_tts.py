@@ -18,6 +18,7 @@ from TTS.tts.utils.speakers import SpeakerManager, get_speaker_balancer_weights,
 from TTS.tts.utils.synthesis import synthesis
 from TTS.tts.utils.visual import plot_alignment, plot_spectrogram
 
+
 # pylint: skip-file
 
 
@@ -28,12 +29,12 @@ class BaseTTS(BaseTrainerModel):
     """
 
     def __init__(
-        self,
-        config: Coqpit,
-        ap: "AudioProcessor",
-        tokenizer: "TTSTokenizer",
-        speaker_manager: SpeakerManager = None,
-        language_manager: LanguageManager = None,
+            self,
+            config: Coqpit,
+            ap: "AudioProcessor",
+            tokenizer: "TTSTokenizer",
+            speaker_manager: SpeakerManager = None,
+            language_manager: LanguageManager = None,
     ):
         super().__init__()
         self.config = config
@@ -204,7 +205,7 @@ class BaseTTS(BaseTrainerModel):
                 largest_idxs = torch.argsort(-dur)[:extra_frames]
                 dur[largest_idxs] -= 1
                 assert (
-                    dur.sum() == mel_lengths[idx]
+                        dur.sum() == mel_lengths[idx]
                 ), f" [!] total duration {dur.sum()} vs spectrogram length {mel_lengths[idx]}"
                 durations[idx, : text_lengths[idx]] = dur
 
@@ -273,14 +274,14 @@ class BaseTTS(BaseTrainerModel):
         return sampler
 
     def get_data_loader(
-        self,
-        config: Coqpit,
-        assets: Dict,
-        is_eval: bool,
-        samples: Union[List[Dict], List[List]],
-        verbose: bool,
-        num_gpus: int,
-        rank: int = None,
+            self,
+            config: Coqpit,
+            assets: Dict,
+            is_eval: bool,
+            samples: Union[List[Dict], List[List]],
+            verbose: bool,
+            num_gpus: int,
+            rank: int = None,
     ) -> "DataLoader":
         if is_eval and not config.run_eval:
             loader = None
@@ -352,7 +353,7 @@ class BaseTTS(BaseTrainerModel):
         return loader
 
     def _get_test_aux_input(
-        self,
+            self,
     ) -> Dict:
 
         d_vector = None

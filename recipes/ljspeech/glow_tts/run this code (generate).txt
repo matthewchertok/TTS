@@ -1,0 +1,1 @@
+tts --text "Please don't stop the music test" --config_path C:\Users\matth\TTS\recipes\ljspeech\rihanna-vocals-glowtts-finetune-June-07-2022_09+22PM-0000000\config.json --model_path C:\Users\matth\TTS\recipes\ljspeech\rihanna-vocals-glowtts-finetune-June-07-2022_09+22PM-0000000\checkpoint.pth --out_path C:\Users\matth\TTS\recipes\ljspeech\output_test.wav

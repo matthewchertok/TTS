@@ -15,25 +15,25 @@ from TTS.tts.utils.text.tokenizer import TTSTokenizer
 from TTS.utils.audio import AudioProcessor
 
 # we use the same path as this script as our training folder.
-output_path = os.path.dirname(os.path.abspath(__file__))
+output_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # DEFINE DATASET CONFIG
 # Set LJSpeech as our target dataset and define its path.
 # You can also use a simple Dict to define the dataset and pass it to your custom formatter.
 dataset_config = BaseDatasetConfig(
-    name="ljspeech", meta_file_train="metadata.csv", path=os.path.join(output_path, "../LJSpeech-1.1/")
+    name="ljspeech", meta_file_train="metadata.csv", path=os.path.join(output_path, "training_data")
 )
 
 # INITIALIZE THE TRAINING CONFIGURATION
 # Configure the model. Every config class inherits the BaseTTSConfig.
 config = GlowTTSConfig(
-    batch_size=32,
-    eval_batch_size=16,
+    batch_size=8,
+    eval_batch_size=4,
     num_loader_workers=4,
     num_eval_loader_workers=4,
     run_eval=True,
     test_delay_epochs=-1,
-    epochs=1000,
+    epochs=250,
     text_cleaner="phoneme_cleaners",
     use_phonemes=True,
     phoneme_language="en-us",
@@ -41,8 +41,8 @@ config = GlowTTSConfig(
     print_step=25,
     print_eval=False,
     mixed_precision=True,
-    output_path=output_path,
-    datasets=[dataset_config],
+    output_path=os.path.join(output_path, 'training_logs'),
+    datasets=[dataset_config], save_step=50, save_best_after=50
 )
 
 # INITIALIZE THE AUDIO PROCESSOR
@@ -64,7 +64,7 @@ train_samples, eval_samples = load_tts_samples(
     dataset_config,
     eval_split=True,
     eval_split_max_size=config.eval_split_max_size,
-    eval_split_size=config.eval_split_size,
+    eval_split_size=0.25,
 )
 
 # INITIALIZE THE MODEL
@@ -81,4 +81,5 @@ trainer = Trainer(
 )
 
 # AND... 3,2,1... 🚀
-trainer.fit()
+if __name__ == '__main__':
+    trainer.fit()
