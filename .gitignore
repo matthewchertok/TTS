@@ -115,7 +115,6 @@ venv.bak/
 *.swo
 
 # pytorch models
-*.pth
 *.pth.tar
 !dummy_speakers.pth
 result/
