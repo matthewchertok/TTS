@@ -3,7 +3,7 @@ import os
 import librosa
 import soundfile
 
-should_downsample = False
+should_downsample = True
 should_rename = True
 
 new_rate = 22050
