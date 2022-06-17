@@ -1,0 +1,79 @@
+ > Using CUDA: False
+ > Number of GPUs: 0
+ > Restoring from model_file.pth ...
+ > Restoring Model...
+ > Partial model initialization...
+ | > 506 / 507 layers are restored.
+ > Model restored from step 330000
+
+ > Model has 28610257 parameters
+ > Restoring best loss from  ...
+ > Starting with loaded last best loss -0.847045
+
+[4m[1m > EPOCH: 0/250[0m
+ --> C:\Users\matth\Documents\just_for_fun\coqui_tts\recipes\ljspeech\training_logs\mark-rober-glowtts-finetune-June-17-2022_01+59PM-0000000
+
+[1m > TRAINING (2022-06-17 13:59:43) [0m
+ > Using CUDA: False
+ > Number of GPUs: 0
+ > Restoring from model_file.pth ...
+ > Restoring Model...
+ > Partial model initialization...
+ | > 506 / 507 layers are restored.
+ > Model restored from step 330000
+
+ > Model has 28610257 parameters
+ > Using CUDA: False
+ > Number of GPUs: 0
+ > Restoring from model_file.pth ...
+ > Restoring Model...
+ > Partial model initialization...
+ | > 506 / 507 layers are restored.
+ > Model restored from step 330000
+
+ > Model has 28610257 parameters
+
+[1m > EVALUATION [0m
+
+
+  [1m--> EVAL PERFORMANCE[0m
+     | > avg_loader_time: 0.00100 [0m(+0.00000)
+     | > avg_loss: 45458.55859 [0m(+0.00000)
+     | > avg_log_mle: 45455.47266 [0m(+0.00000)
+     | > avg_loss_dur: 3.08640 [0m(+0.00000)
+
+
+[4m[1m > EPOCH: 1/250[0m
+ --> C:\Users\matth\Documents\just_for_fun\coqui_tts\recipes\ljspeech\training_logs\mark-rober-glowtts-finetune-June-17-2022_01+59PM-0000000
+
+[1m > TRAINING (2022-06-17 14:02:13) [0m
+
+[1m > EVALUATION [0m
+
+
+  [1m--> EVAL PERFORMANCE[0m
+     | > avg_loader_time:[92m 0.00000 [0m(-0.00100)
+     | > avg_loss:[92m 45458.45703 [0m(-0.10156)
+     | > avg_log_mle:[92m 45455.37109 [0m(-0.10156)
+     | > avg_loss_dur: 3.08640 [0m(+0.00000)
+
+
+[4m[1m > EPOCH: 2/250[0m
+ --> C:\Users\matth\Documents\just_for_fun\coqui_tts\recipes\ljspeech\training_logs\mark-rober-glowtts-finetune-June-17-2022_01+59PM-0000000
+
+[1m > TRAINING (2022-06-17 14:04:42) [0m
+
+[1m > EVALUATION [0m
+
+
+  [1m--> EVAL PERFORMANCE[0m
+     | > avg_loader_time: 0.00000 [0m(+0.00000)
+     | > avg_loss:[91m 45458.52344 [0m(+0.06641)
+     | > avg_log_mle:[91m 45455.43750 [0m(+0.06641)
+     | > avg_loss_dur:[92m 3.08640 [0m(-0.00000)
+
+
+[4m[1m > EPOCH: 3/250[0m
+ --> C:\Users\matth\Documents\just_for_fun\coqui_tts\recipes\ljspeech\training_logs\mark-rober-glowtts-finetune-June-17-2022_01+59PM-0000000
+
+[1m > TRAINING (2022-06-17 14:07:22) [0m
